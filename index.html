@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kalkulator</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Salsa">
+	<style type="text/css">
+		*{
+			font-family: 'Salsa';
+			color: #fff;
+		}
+		body{
+			background: black;
+		}
+		form{
+			width: 240px;
+			margin: 50px auto;
+			border: 1px solid white;
+			border-radius: 15px;
+			background: #666;
+		}
+		#dis{
+			width: 224px;
+			height: 50px;
+			margin: 5px;
+			border: 1px solid black;
+			border-radius: 5px;
+			text-align: right;
+			font-size: 26px;
+			color: #000;
+			background: #ececec;
+		}
+		.b{
+			width: 50px;
+			height: 40px;
+			margin-left: 5px;
+			margin-bottom: 5px;
+			border: 1px solid black;
+			border-radius: 15px;
+			cursor: pointer;
+			background: #444;
+			font-size: 18x
+		}
+		.b:active{
+			background: #333;
+			transform: translateY(2px);
+		}
+		.h{
+			width: 110px;
+			background: darkblue;
+		}
+		.c{
+			width: 110px;
+			background: maroon;
+		}
+		.d{
+			width: 110px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button style="background: white; border-radius: 6px; width: 110px; height: 40px;"><a href="dev.html" style="color: black; font-size: 20px;">Developer</a></button>
+	<form name="kal">
+		<h2 align="center">Kalkulator</h2>
+		<input id="dis" type="text" name="dis" readonly>
+		<br>
+
+		<input class="b c" type="reset" value="AC">
+		<input class="b d" type="button" value="&lt" onclick="deleteLastcharacter()">
+				<script type="text/javascript">
+					function deleteLastcharacter(){
+						var dis = document.getElementById('dis');
+						dis.value = dis.value.slice(0, -1);
+					}
+				</script>
+		<br>
+
+		<input class="b" type="button" value="7" onclick="kal.dis.value += '7'">
+		<input class="b" type="button" value="8" onclick="kal.dis.value += '8'">
+		<input class="b" type="button" value="9" onclick="kal.dis.value += '9'">
+		<input class="b" type="button" value="+" onclick="kal.dis.value += '+'">
+		<br>
+
+		<input class="b" type="button" value="4" onclick="kal.dis.value += '4'">
+		<input class="b" type="button" value="5" onclick="kal.dis.value += '5'">
+		<input class="b" type="button" value="6" onclick="kal.dis.value += '6'">
+		<input class="b" type="button" value="-" onclick="kal.dis.value += '-'">
+		<br>
+
+		<input class="b" type="button" value="1" onclick="kal.dis.value += '1'">
+		<input class="b" type="button" value="2" onclick="kal.dis.value += '2'">
+		<input class="b" type="button" value="3" onclick="kal.dis.value += '3'">
+		<input class="b" type="button" value="*" onclick="kal.dis.value += '*'">
+		<br>
+
+		<input class="b" type="button" value="." onclick="kal.dis.value += '.'">
+		<input class="b" type="button" value="0" onclick="kal.dis.value += '0'">
+		<input class="b" type="button" value="00" onclick="kal.dis.value += '00'">
+		<input class="b" type="button" value="/" onclick="kal.dis.value += '/'">
+		<br>
+		<input class="b" type="button" value="^" onclick="kal.dis.value += '**'">
+		<input class="b" type="button" value="&#8730" onclick="kal.dis.value = Math.sqrt(kal.dis.value)">
+		<input class="b h" type="button" value="=" onclick="kal.dis.value = eval (kal.dis.value)">
+	</form>
+</body>
+</html>
